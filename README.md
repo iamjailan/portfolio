@@ -1,78 +1,38 @@
-# Jailan Samun — Portfolio
+# Hi, I’m Jailan Samun 👋
 
-The source code for [sleepany.com](https://sleepany.com), the personal portfolio of Jailan Samun. It presents work experience, education, technical skills, selected projects, a downloadable CV, and a software-development blog.
+I’m a Full-Stack Developer based in Kabul, Afghanistan. I build reliable, scalable web applications and APIs with a focus on polished user experiences and maintainable backend systems.
 
-## Features
+With more than five years of experience, I work across the full product lifecycle—from interface design and responsive frontend development to API architecture, databases, deployment, and ongoing improvement.
 
-- Responsive portfolio with light and dark themes
-- Work, education, skills, projects, and contact sections
-- Project screenshots and technology tags
-- Downloadable CV
-- MDX-powered blog with pagination
-- Per-page Open Graph images and structured data
-- Canonical metadata for `https://sleepany.com`
-- Generated `sitemap.xml`, `robots.txt`, and `llms.txt`
+## What I do
 
-## Technology
+- Build web and mobile applications with React, Next.js, Node.js, NestJS, and TypeScript
+- Design secure, scalable REST and GraphQL APIs
+- Model and manage data with PostgreSQL, MySQL, MongoDB, and Prisma
+- Deploy and operate applications with Docker, Azure, Google Cloud, CI/CD, and GitHub Actions
+- Turn product ideas into complete, production-ready experiences
 
-- Next.js 16 and React 19
-- TypeScript
-- Tailwind CSS 4
-- shadcn/ui and Radix UI
-- Motion animations
-- Content Collections and MDX
+## Experience
 
-## Local development
+I’ve contributed to products and teams including OtaTickets.com, Sunzala Marketplace, ProfitWave360, blissio.ai, AseelApp, MCCO Afghanistan, and Dursa. My work has included booking systems, marketplaces, financial-service websites, AI-enabled services, e-commerce platforms, and public-facing web applications.
 
-Requirements:
+## Selected projects
 
-- Node.js 18 or newer
-- pnpm
+- [ResumeAF](https://resume.sleepany.com/) — A CV and resume builder with templates and export support.
+- [Sunzala Afghan Store](https://www.sunzala.app/) — A marketplace for Afghan crafts, spices, clothing, and gemstones.
+- [Marghai Job Portal](https://marghai.vercel.app/) — A job platform with authentication, search, filtering, and applications.
+- [Wadan Real Estate](https://wadan-estate.onrender.com/) — A MERN real-estate application with user authentication.
+- [Chatak Weather](https://weather-af.netlify.app/) — A multilingual weather application built with React and the OpenWeather API.
+- [Singar Store](https://singar.netlify.app/) — A React and Firebase e-commerce application.
 
-Install the dependencies and start the development server:
+## Core stack
 
-```bash
-pnpm install
-pnpm dev
-```
+JavaScript · TypeScript · Python · Go · React · Next.js · Node.js · NestJS · Express · PostgreSQL · MongoDB · MySQL · Prisma · Redis · RabbitMQ · Docker · Azure · Google Cloud · Tailwind CSS
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+## Find me online
 
-## Available commands
-
-```bash
-pnpm dev       # Start the development server
-pnpm build     # Create a production build
-pnpm start     # Run the production build
-pnpm lint      # Check the code with ESLint
-pnpm lint:fix  # Fix supported ESLint issues
-```
-
-## Customization
-
-Most portfolio content lives in [`src/data/resume.tsx`](src/data/resume.tsx), including personal details, skills, experience, education, projects, social links, the canonical domain, and the CV path.
-
-Other useful locations:
-
-- `content/` — blog posts written in MDX
-- `public/` — CV, profile image, project screenshots, fonts, and other static assets
-- `src/app/` — pages, metadata, sitemap, robots, and `llms.txt`
-- `src/components/` — reusable interface components and portfolio sections
-
-## SEO and discovery
-
-The production site exposes:
-
-- [https://sleepany.com/sitemap.xml](https://sleepany.com/sitemap.xml)
-- [https://sleepany.com/robots.txt](https://sleepany.com/robots.txt)
-- [https://sleepany.com/llms.txt](https://sleepany.com/llms.txt)
-
-Blog entries are added to the sitemap and `llms.txt` automatically from the MDX collection.
-
-## Deployment
-
-Build the application with `pnpm build` and deploy it to any platform that supports Next.js. Configure `sleepany.com` as the production domain and redirect the `www` hostname to the canonical non-`www` URL.
-
-## License
-
-This project is available under the terms in [LICENSE](LICENSE).
+- Portfolio: [sleepany.com](https://sleepany.com)
+- GitHub: [github.com/iamjailan](https://github.com/iamjailan)
+- LinkedIn: [linkedin.com/in/iamjailan](https://linkedin.com/in/iamjailan)
+- Email: [jailan.samun@gmail.com](mailto:jailan.samun@gmail.com)
+- [Download my CV](public/Jailan_Samun_CV.pdf)
