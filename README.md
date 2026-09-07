@@ -1,47 +1,78 @@
-<div align="center">
-<img alt="Portfolio" src="https://github.com/dillionverma/portfolio/assets/16860528/57ffca81-3f0a-4425-b31d-094f61725455" width="90%">
-</div>
+# Jailan Samun — Portfolio
 
-# Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
+The source code for [sleepany.com](https://sleepany.com), the personal portfolio of Jailan Samun. It presents work experience, education, technical skills, selected projects, a downloadable CV, and a software-development blog.
 
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+## Features
 
-# Features
+- Responsive portfolio with light and dark themes
+- Work, education, skills, projects, and contact sections
+- Project screenshots and technology tags
+- Downloadable CV
+- MDX-powered blog with pagination
+- Per-page Open Graph images and structured data
+- Canonical metadata for `https://sleepany.com`
+- Generated `sitemap.xml`, `robots.txt`, and `llms.txt`
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+## Technology
 
-# Getting Started Locally
+- Next.js 16 and React 19
+- TypeScript
+- Tailwind CSS 4
+- shadcn/ui and Radix UI
+- Motion animations
+- Content Collections and MDX
 
-1. Clone this repository to your local machine:
+## Local development
 
-   ```bash
-   git clone https://github.com/dillionverma/portfolio
-   ```
+Requirements:
 
-2. Move to the cloned directory
+- Node.js 18 or newer
+- pnpm
 
-   ```bash
-   cd portfolio
-   ```
+Install the dependencies and start the development server:
 
-3. Install dependencies:
+```bash
+pnpm install
+pnpm dev
+```
 
-   ```bash
-   pnpm install
-   ```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-4. Start the local Server:
+## Available commands
 
-   ```bash
-   pnpm dev
-   ```
+```bash
+pnpm dev       # Start the development server
+pnpm build     # Create a production build
+pnpm start     # Run the production build
+pnpm lint      # Check the code with ESLint
+pnpm lint:fix  # Fix supported ESLint issues
+```
 
-5. Open the [Config file](./src/data/resume.tsx) and make changes
+## Customization
 
-# License
+Most portfolio content lives in [`src/data/resume.tsx`](src/data/resume.tsx), including personal details, skills, experience, education, projects, social links, the canonical domain, and the CV path.
 
-Licensed under the [MIT license](https://github.com/dillionverma/portfolio/blob/main/LICENSE.md).
+Other useful locations:
+
+- `content/` — blog posts written in MDX
+- `public/` — CV, profile image, project screenshots, fonts, and other static assets
+- `src/app/` — pages, metadata, sitemap, robots, and `llms.txt`
+- `src/components/` — reusable interface components and portfolio sections
+
+## SEO and discovery
+
+The production site exposes:
+
+- [https://sleepany.com/sitemap.xml](https://sleepany.com/sitemap.xml)
+- [https://sleepany.com/robots.txt](https://sleepany.com/robots.txt)
+- [https://sleepany.com/llms.txt](https://sleepany.com/llms.txt)
+
+Blog entries are added to the sitemap and `llms.txt` automatically from the MDX collection.
+
+## Deployment
+
+Build the application with `pnpm build` and deploy it to any platform that supports Next.js. Configure `sleepany.com` as the production domain and redirect the `www` hostname to the canonical non-`www` URL.
+
+## License
+
+This project is available under the terms in [LICENSE](LICENSE).

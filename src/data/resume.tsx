@@ -13,37 +13,66 @@ export const DATA = {
   name: "Jailan Samun",
   initials: "JS",
   url: "https://sleepany.com",
+  resumeUrl: "/Jailan_Samun_CV.pdf",
   location: "Kabul, Afghanistan",
   locationLink: "https://maps.google.com/?q=Kabul,Afghanistan",
   description:
     "Full-Stack Developer building reliable, scalable web applications and APIs with React, Next.js, Node.js, NestJS, and TypeScript.",
   summary:
     "Full-Stack Developer with over 5 years of experience building production web and mobile applications, designing APIs, and delivering responsive frontend experiences. I specialize in React, Next.js, Node.js, NestJS, and modern backend systems.\n\nMy core stack includes React, Next.js, Node.js, NestJS, TypeScript, PostgreSQL, and Prisma. I also work with React Query, Redux, Docker, and cloud deployment workflows.",
-  avatarUrl: "https://www.sleepany.com/profile-avatar.webp",
-  skills: [
-    { name: "JavaScript", icon: undefined },
-    { name: "TypeScript", icon: Typescript },
-    { name: "Python", icon: Python },
-    { name: "Go", icon: Golang },
-    { name: "React", icon: ReactLight },
-    { name: "Next.js", icon: NextjsIconDark },
-    { name: "Node.js", icon: Nodejs },
-    { name: "NestJS", icon: undefined },
-    { name: "Express", icon: undefined },
-    { name: "REST APIs", icon: undefined },
-    { name: "GraphQL", icon: undefined },
-    { name: "PostgreSQL", icon: Postgresql },
-    { name: "MongoDB", icon: undefined },
-    { name: "MySQL", icon: undefined },
-    { name: "Prisma", icon: undefined },
-    { name: "Redis", icon: undefined },
-    { name: "RabbitMQ", icon: undefined },
-    { name: "Docker", icon: Docker },
-    { name: "Azure", icon: undefined },
-    { name: "Google Cloud", icon: undefined },
-    { name: "CI/CD", icon: undefined },
-    { name: "GitHub Actions", icon: undefined },
-    { name: "Tailwind CSS", icon: undefined },
+  avatarUrl: "/go-gopher.png",
+  skillCategories: [
+    {
+      name: "Programming Languages",
+      skills: [
+        { name: "JavaScript", icon: undefined },
+        { name: "TypeScript", icon: Typescript },
+        { name: "Python", icon: Python },
+        { name: "Go", icon: Golang },
+      ],
+    },
+    {
+      name: "Frameworks & Libraries",
+      skills: [
+        { name: "React", icon: ReactLight },
+        { name: "Next.js", icon: NextjsIconDark },
+        { name: "Node.js", icon: Nodejs },
+        { name: "NestJS", icon: undefined },
+        { name: "Express", icon: undefined },
+        { name: "REST APIs", icon: undefined },
+        { name: "GraphQL", icon: undefined },
+      ],
+    },
+    {
+      name: "Databases & ORMs",
+      skills: [
+        { name: "PostgreSQL", icon: Postgresql },
+        { name: "MongoDB", icon: undefined },
+        { name: "MySQL", icon: undefined },
+        { name: "Prisma", icon: undefined },
+      ],
+    },
+    {
+      name: "Messaging & Caching",
+      skills: [
+        { name: "Redis", icon: undefined },
+        { name: "RabbitMQ", icon: undefined },
+      ],
+    },
+    {
+      name: "Cloud & Deployment",
+      skills: [
+        { name: "Docker", icon: Docker },
+        { name: "Azure", icon: undefined },
+        { name: "Google Cloud", icon: undefined },
+        { name: "CI/CD", icon: undefined },
+        { name: "GitHub Actions", icon: undefined },
+      ],
+    },
+    {
+      name: "Tools & Other",
+      skills: [{ name: "Tailwind CSS", icon: undefined }],
+    },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -86,7 +115,7 @@ export const DATA = {
       badges: [],
       location: "Kabul, Afghanistan",
       title: "Full-Stack Developer",
-      logoUrl: "",
+      logoUrl: "https://www.google.com/s2/favicons?domain=otatickets.com&sz=128",
       start: "Aug 2026",
       end: "Present",
       description:
@@ -94,11 +123,11 @@ export const DATA = {
     },
     {
       company: "Sunzala Marketplace",
-      href: "",
+      href: "https://www.sunzala.app",
       badges: [],
       location: "Kabul, Afghanistan",
       title: "Founder & Developer",
-      logoUrl: "",
+      logoUrl: "https://www.google.com/s2/favicons?domain=sunzala.app&sz=128",
       start: "Jun 2026",
       end: "Present",
       description:
@@ -106,11 +135,11 @@ export const DATA = {
     },
     {
       company: "Profitwave360 LLC",
-      href: "",
+      href: "https://profitwave360.com",
       badges: [],
       location: "Remote",
       title: "Software Engineer",
-      logoUrl: "",
+      logoUrl: "https://www.google.com/s2/favicons?domain=profitwave360.com&sz=128",
       start: "May 2026",
       end: "Jul 2026",
       description:
@@ -122,7 +151,7 @@ export const DATA = {
       badges: [],
       location: "Kabul, Afghanistan - Remote",
       title: "Full-Stack Developer",
-      logoUrl: "",
+      logoUrl: "https://www.google.com/s2/favicons?domain=blissio.ai&sz=128",
       start: "Sep 2024",
       end: "Jun 2026",
       description:
@@ -130,11 +159,11 @@ export const DATA = {
     },
     {
       company: "AseelApp",
-      href: "",
+      href: "https://aseelapp.com",
       badges: [],
       location: "Kabul, Afghanistan - Remote",
       title: "Full-Stack Developer",
-      logoUrl: "",
+      logoUrl: "https://www.google.com/s2/favicons?domain=aseelapp.com&sz=128",
       start: "Dec 2023",
       end: "Aug 2024",
       description:
@@ -146,7 +175,7 @@ export const DATA = {
       badges: [],
       location: "Kabul, Afghanistan",
       title: "Full-Stack Developer",
-      logoUrl: "",
+      logoUrl: "https://www.google.com/s2/favicons?domain=mcco.af&sz=128",
       start: "Feb 2023",
       end: "Dec 2023",
       description:
@@ -154,11 +183,11 @@ export const DATA = {
     },
     {
       company: "Dursa",
-      href: "",
+      href: "https://www.instagram.com/dursa_handicraft/",
       badges: [],
       location: "Kabul, Afghanistan",
       title: "Web Developer",
-      logoUrl: "",
+      logoUrl: "https://www.google.com/s2/favicons?domain=instagram.com&sz=128",
       start: "Jul 2022",
       end: "Jan 2023",
       description:
@@ -170,7 +199,7 @@ export const DATA = {
       school: "Rana University",
       href: "https://ru.edu.af",
       degree: "Bachelor of Computer Science (BCS) - 83% (estimated GPA 3.32/4.0)",
-      logoUrl: "",
+      logoUrl: "https://www.google.com/s2/favicons?domain=ru.edu.af&sz=128",
       start: "2020",
       end: "2024",
     },
@@ -181,8 +210,9 @@ export const DATA = {
       description:
         "A CV and resume builder for creating a resume, choosing a template, and exporting it.",
       technologies: ["Next.js", "React", "TypeScript"],
+      href: "https://resume.sleepany.com/",
       links: [],
-      image: "",
+      image: "/resume_af.png",
       video: "",
     },
     {
@@ -190,8 +220,9 @@ export const DATA = {
       description:
         "An Afghan marketplace connecting buyers with authentic crafts, spices, clothing, and gemstones.",
       technologies: ["Next.js", "React", "TypeScript", "NestJS", "PostgreSQL"],
+      href: "https://www.sunzala.app/",
       links: [],
-      image: "",
+      image: "/sunzala-project.webp",
       video: "",
     },
     {
@@ -199,8 +230,9 @@ export const DATA = {
       description:
         "A full-stack job portal with secure authentication, job browsing, filtering, and real-time applications.",
       technologies: ["React", "Node.js", "REST APIs"],
+      href: "https://marghai.vercel.app/",
       links: [],
-      image: "",
+      image: "/marghai.webp",
       video: "",
     },
     {
@@ -208,16 +240,18 @@ export const DATA = {
       description:
         "A real estate web application built with the MERN stack, including user sign-up and sign-in.",
       technologies: ["MongoDB", "Express", "React", "Node.js"],
+      href: "https://wadan-estate.onrender.com/",
       links: [],
-      image: "",
+      image: "/wadan.webp",
       video: "",
     },
     {
       title: "Chatak Weather",
       description: "A multilingual weather application built with React and the OpenWeather API.",
       technologies: ["React", "OpenWeather API"],
+      href: "https://weather-af.netlify.app/",
       links: [],
-      image: "",
+      image: "/chatak.webp",
       video: "",
     },
     {
@@ -225,8 +259,9 @@ export const DATA = {
       description:
         "An e-commerce application built with React and Tailwind CSS, using Firebase for storage.",
       technologies: ["React", "Tailwind CSS", "Firebase"],
+      href: "https://singar.netlify.app/",
       links: [],
-      image: "",
+      image: "/singar.webp",
       video: "",
     },
   ],

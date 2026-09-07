@@ -43,20 +43,25 @@ export async function generateMetadata({
     summary: description,
     image,
   } = post;
+  const canonicalUrl = new URL(`/blog/${slug}`, DATA.url).toString();
+  const imageUrl = image ? new URL(image, DATA.url).toString() : undefined;
 
   return {
     title,
     description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title,
       description,
       type: "article",
       publishedTime,
-      url: `${DATA.url}/blog/${slug}`,
-      ...(image && {
+      url: canonicalUrl,
+      ...(imageUrl && {
         images: [
           {
-            url: `${DATA.url}${image}`,
+            url: imageUrl,
           },
         ],
       }),
@@ -65,8 +70,8 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      ...(image && {
-        images: [`${DATA.url}${image}`],
+      ...(imageUrl && {
+        images: [imageUrl],
       }),
     },
   };
@@ -95,6 +100,10 @@ export default async function Blog({
 
   const getSlug = (post: (typeof sortedPosts)[0]) =>
     post._meta.path.replace(/\.mdx$/, "");
+  const canonicalUrl = new URL(`/blog/${slug}`, DATA.url).toString();
+  const imageUrl = post.image
+    ? new URL(post.image, DATA.url).toString()
+    : new URL(`/blog/${slug}/opengraph-image`, DATA.url).toString();
 
   const jsonLdContent = JSON.stringify({
     "@context": "https://schema.org",
@@ -103,10 +112,8 @@ export default async function Blog({
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     description: post.summary,
-    image: post.image
-      ? `${DATA.url}${post.image}`
-      : `${DATA.url}/blog/${slug}/opengraph-image`,
-    url: `${DATA.url}/blog/${slug}`,
+    image: imageUrl,
+    url: canonicalUrl,
     author: {
       "@type": "Person",
       name: DATA.name,

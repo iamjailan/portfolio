@@ -79,6 +79,17 @@ export function ProjectCard({
               <div className="w-full h-48 bg-muted" />
             )}
           </Link>
+        ) : video ? (
+          <video
+            src={video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-48 object-cover"
+          />
+        ) : image ? (
+          <ProjectImage src={image} alt={title} />
         ) : (
           <div className="w-full h-48 bg-muted flex items-center justify-center px-6 text-center">
             <span className="text-sm font-medium text-muted-foreground">{title}</span>
