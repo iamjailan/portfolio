@@ -1,7 +1,10 @@
 packages:
-  - "."
-
+  - .
 allowBuilds:
   esbuild: true
   sharp: true
   unrs-resolver: true
+ignoredBuiltDependencies:
+  - esbuild
+  - sharp
+  - unrs-resolver
