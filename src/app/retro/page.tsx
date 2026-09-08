@@ -11,6 +11,10 @@ const pageDescription =
 export const metadata: Metadata = {
   title: "Let’s Travel 30 Years Back — 1990s Portfolio",
   description: pageDescription,
+  applicationName: DATA.name,
+  authors: [{ name: DATA.name, url: DATA.url }],
+  creator: DATA.name,
+  publisher: DATA.name,
   keywords: [
     "Jailan Samun retro portfolio",
     "1990s website portfolio",
@@ -42,8 +46,15 @@ export default function RetroPortfolioPage() {
     name: "Jailan Samun’s 1990s Portfolio",
     description: pageDescription,
     url: pageUrl,
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${DATA.url}/#website`,
+      name: DATA.name,
+      url: DATA.url,
+    },
     mainEntity: {
       "@type": "Person",
+      "@id": `${DATA.url}/#person`,
       name: DATA.name,
       url: DATA.url,
       jobTitle: "Full-Stack Developer",

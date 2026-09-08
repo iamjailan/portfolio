@@ -49,6 +49,9 @@ export async function generateMetadata({
   return {
     title,
     description,
+    authors: [{ name: DATA.name, url: DATA.url }],
+    creator: DATA.name,
+    publisher: DATA.name,
     alternates: {
       canonical: canonicalUrl,
     },
@@ -58,6 +61,9 @@ export async function generateMetadata({
       type: "article",
       publishedTime,
       url: canonicalUrl,
+      siteName: DATA.name,
+      locale: "en_US",
+      authors: [DATA.name],
       ...(imageUrl && {
         images: [
           {
@@ -116,7 +122,21 @@ export default async function Blog({
     url: canonicalUrl,
     author: {
       "@type": "Person",
+      "@id": `${DATA.url}/#person`,
       name: DATA.name,
+      url: DATA.url,
+    },
+    publisher: {
+      "@type": "Person",
+      "@id": `${DATA.url}/#person`,
+      name: DATA.name,
+      url: DATA.url,
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${DATA.url}/#website`,
+      name: DATA.name,
+      url: DATA.url,
     },
   }).replace(/</g, "\\u003c");
 

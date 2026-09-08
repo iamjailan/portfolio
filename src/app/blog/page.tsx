@@ -1,25 +1,34 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { allPosts } from "content-collections";
+import { DATA } from "@/data/resume";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { paginate, normalizePage } from "@/lib/pagination";
 import { ChevronRight } from "lucide-react";
 
+const pageDescription = "Thoughts on software development, life, and more.";
+
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Thoughts on software development, life, and more.",
+  description: pageDescription,
+  authors: [{ name: DATA.name, url: DATA.url }],
+  creator: DATA.name,
+  publisher: DATA.name,
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
     title: "Blog",
-    description: "Thoughts on software development, life, and more.",
+    description: pageDescription,
     url: "/blog",
+    siteName: DATA.name,
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog",
-    description: "Thoughts on software development, life, and more.",
+    description: pageDescription,
   },
 };
 

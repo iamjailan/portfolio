@@ -22,11 +22,51 @@ const geistMono = Geist_Mono({
   variable: "--font-mono",
 });
 
+const siteName = DATA.name;
+const defaultTitle = `${DATA.name} — Full-Stack Developer`;
+const siteHostname = new URL(DATA.url).hostname.replace(/^www\./, "");
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${DATA.url}/#website`,
+      name: siteName,
+      alternateName: [siteHostname, `${DATA.name} Portfolio`],
+      url: DATA.url,
+      description: DATA.description,
+      inLanguage: "en-US",
+      publisher: { "@id": `${DATA.url}/#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${DATA.url}/#person`,
+      name: DATA.name,
+      url: DATA.url,
+      image: new URL(DATA.avatarUrl, DATA.url).toString(),
+      jobTitle: "Full-Stack Developer",
+      description: DATA.description,
+      email: DATA.contact.email,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Kabul",
+        addressCountry: "AF",
+      },
+      sameAs: [
+        DATA.contact.social.GitHub.url,
+        DATA.contact.social.LinkedIn.url,
+      ],
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
+  applicationName: siteName,
   title: {
-    default: `${DATA.name} — Full-Stack Developer`,
-    template: `%s | ${DATA.name}`,
+    default: defaultTitle,
+    template: `%s | ${siteName}`,
   },
   description: DATA.description,
   keywords: [
@@ -44,8 +84,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: DATA.name, url: DATA.url }],
   creator: DATA.name,
-  publisher: DATA.name,
+  publisher: siteName,
   category: "technology",
+  classification: "Portfolio",
+  referrer: "origin-when-cross-origin",
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -65,18 +107,22 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: DATA.name,
+    title: siteName,
   },
   alternates: {
     canonical: "/",
+    types: {
+      "text/plain": "/llms.txt",
+    },
   },
   openGraph: {
-    title: `${DATA.name} — Full-Stack Developer`,
+    title: defaultTitle,
     description: DATA.description,
     url: DATA.url,
-    siteName: `${DATA.name}`,
+    siteName,
     locale: "en_US",
     type: "website",
+    emails: [DATA.contact.email],
   },
   robots: {
     index: true,
@@ -90,13 +136,9 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name} — Full-Stack Developer`,
+    title: defaultTitle,
     description: DATA.description,
     card: "summary_large_image",
-  },
-  verification: {
-    google: "",
-    yandex: "",
   },
 };
 
@@ -115,6 +157,12 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
