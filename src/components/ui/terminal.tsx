@@ -148,7 +148,7 @@ interface TerminalProps {
 export function Terminal({
   children,
   className,
-  title = "jailan@portfolio — zsh",
+  title = "jailan@portfolio: ~ — zsh",
 }: TerminalProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(containerRef, { amount: 0.3, once: true });
@@ -179,15 +179,15 @@ export function Terminal({
       <div
         ref={containerRef}
         className={cn(
-          "overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 font-mono text-zinc-100 shadow-2xl dark:border-zinc-700",
+          "overflow-hidden rounded-xl border border-[#5c3453] bg-[#300a24] font-mono text-[#f7f1f5] shadow-2xl",
           className
         )}
       >
-        <div className="flex items-center gap-2 border-b border-zinc-800 bg-zinc-900/80 px-4 py-3 dark:border-zinc-700">
-          <span className="size-3 rounded-full bg-red-500" />
-          <span className="size-3 rounded-full bg-amber-400" />
-          <span className="size-3 rounded-full bg-emerald-500" />
-          <span className="ml-2 text-xs text-zinc-400">{title}</span>
+        <div className="flex items-center gap-2 border-b border-[#5c3453] bg-[#45213a] px-4 py-3">
+          <span className="size-3 rounded-full bg-[#e95420]" />
+          <span className="size-3 rounded-full bg-[#f6b73c]" />
+          <span className="size-3 rounded-full bg-[#8ae234]" />
+          <span className="ml-2 text-xs text-[#d6c5d1]">{title}</span>
         </div>
         <pre className="overflow-x-auto p-4 sm:p-5">
           <code className="grid gap-y-1 whitespace-pre-wrap">{wrappedChildren}</code>

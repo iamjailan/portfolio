@@ -28,6 +28,7 @@ export const DATA = {
         { name: "JavaScript", icon: undefined },
         { name: "TypeScript", icon: Typescript },
         { name: "Python", icon: Python },
+        { name: "PHP", icon: undefined },
         { name: "Go", icon: Golang },
       ],
     },
@@ -42,6 +43,12 @@ export const DATA = {
         { name: "Express", icon: undefined },
         { name: "REST APIs", icon: undefined },
         { name: "GraphQL", icon: undefined },
+        { name: "Framer Motion", icon: undefined },
+        { name: "Redux", icon: undefined },
+        { name: "Zustand", icon: undefined },
+        { name: "React Query", icon: undefined },
+        { name: "Laravel", icon: undefined },
+        { name: "Gin", icon: undefined },
       ],
     },
     {
@@ -52,6 +59,8 @@ export const DATA = {
         { name: "MySQL", icon: undefined },
         { name: "Prisma", icon: undefined },
         { name: "GORM", icon: undefined },
+        { name: "TypeORM", icon: undefined },
+        { name: "Firebase", icon: undefined },
       ],
     },
     {
@@ -59,6 +68,7 @@ export const DATA = {
       skills: [
         { name: "Redis", icon: undefined },
         { name: "RabbitMQ", icon: undefined },
+        { name: "Kafka", icon: undefined },
       ],
     },
     {
@@ -67,13 +77,24 @@ export const DATA = {
         { name: "Docker", icon: Docker },
         { name: "Azure", icon: undefined },
         { name: "Google Cloud", icon: undefined },
+        { name: "DigitalOcean", icon: undefined },
         { name: "CI/CD", icon: undefined },
         { name: "GitHub Actions", icon: undefined },
       ],
     },
     {
       name: "Tools & Other",
-      skills: [{ name: "Tailwind CSS", icon: undefined }],
+      skills: [
+        { name: "Git", icon: undefined },
+        { name: "Tailwind CSS", icon: undefined },
+        { name: "MedusaJS", icon: undefined },
+        { name: "Web Performance", icon: undefined },
+        { name: "SEO", icon: undefined },
+      ],
+    },
+    {
+      name: "Methodologies",
+      skills: [{ name: "Agile / Scrum", icon: undefined }],
     },
   ],
   navbar: [

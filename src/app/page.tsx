@@ -64,35 +64,35 @@ export default function Page() {
             </h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <Terminal className="w-full" title="jailan@portfolio — zsh">
-              <TypingAnimation className="text-emerald-400">
-                {"jailan@portfolio ~ % whoami"}
+            <Terminal className="w-full" title="jailan@portfolio: ~ — zsh">
+              <TypingAnimation className="text-[#8ae234]">
+                {"jailan@portfolio:~$ whoami"}
               </TypingAnimation>
-              <AnimatedSpan className="text-zinc-200">
+              <AnimatedSpan className="text-[#f7f1f5]">
                 Jailan Samun — Full-Stack Developer
               </AnimatedSpan>
-              <TypingAnimation className="mt-2 text-emerald-400">
-                {"jailan@portfolio ~ % cat profile.txt"}
+              <TypingAnimation className="mt-2 text-[#8ae234]">
+                {"jailan@portfolio:~$ cat profile.txt"}
               </TypingAnimation>
-              <AnimatedSpan className="text-zinc-300">
+              <AnimatedSpan className="text-[#f7f1f5]">
                 {DATA.description}
               </AnimatedSpan>
-              <TypingAnimation className="mt-2 text-emerald-400">
-                {"jailan@portfolio ~ % stack --primary"}
+              <TypingAnimation className="mt-2 text-[#8ae234]">
+                {"jailan@portfolio:~$ stack --primary"}
               </TypingAnimation>
-              <AnimatedSpan className="text-cyan-300">
+              <AnimatedSpan className="text-[#fce94f]">
                 Go · Python · Node.js · TypeScript · PostgreSQL · MySQL
               </AnimatedSpan>
-              <TypingAnimation className="mt-2 text-emerald-400">
-                {"jailan@portfolio ~ % pwd"}
+              <TypingAnimation className="mt-2 text-[#8ae234]">
+                {"jailan@portfolio:~$ pwd"}
               </TypingAnimation>
-              <AnimatedSpan className="text-zinc-300">
+              <AnimatedSpan className="text-[#d6c5d1]">
                 {DATA.location}
               </AnimatedSpan>
-              <TypingAnimation className="mt-2 text-emerald-400">
-                {"jailan@portfolio ~ % echo $MISSION"}
+              <TypingAnimation className="mt-2 text-[#8ae234]">
+                {"jailan@portfolio:~$ echo $MISSION"}
               </TypingAnimation>
-              <AnimatedSpan className="text-amber-200">
+              <AnimatedSpan className="text-[#fcaf3e]">
                 Building thoughtful products that feel fast, useful, and dependable.
               </AnimatedSpan>
             </Terminal>
