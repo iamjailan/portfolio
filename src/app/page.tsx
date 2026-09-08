@@ -8,6 +8,11 @@ import ContactSection from "@/components/section/contact-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { Button } from "@/components/ui/button";
+import {
+  AnimatedSpan,
+  Terminal,
+  TypingAnimation,
+} from "@/components/ui/terminal";
 import { ArrowUpRight, Download } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
@@ -49,6 +54,49 @@ export default function Page() {
               </div>
             </BlurFade>
           </div>
+        </div>
+      </section>
+      <section id="terminal-intro" aria-labelledby="terminal-intro-heading">
+        <div className="flex min-h-0 flex-col gap-y-4">
+          <BlurFade delay={BLUR_FADE_DELAY * 3}>
+            <h2 id="terminal-intro-heading" className="text-xl font-bold">
+              A quick introduction
+            </h2>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 4}>
+            <Terminal className="w-full" title="jailan@portfolio — zsh">
+              <TypingAnimation className="text-emerald-400">
+                {"jailan@portfolio ~ % whoami"}
+              </TypingAnimation>
+              <AnimatedSpan className="text-zinc-200">
+                Jailan Samun — Full-Stack Developer
+              </AnimatedSpan>
+              <TypingAnimation className="mt-2 text-emerald-400">
+                {"jailan@portfolio ~ % cat profile.txt"}
+              </TypingAnimation>
+              <AnimatedSpan className="text-zinc-300">
+                {DATA.description}
+              </AnimatedSpan>
+              <TypingAnimation className="mt-2 text-emerald-400">
+                {"jailan@portfolio ~ % stack --primary"}
+              </TypingAnimation>
+              <AnimatedSpan className="text-cyan-300">
+                Go · Python · Node.js · TypeScript · PostgreSQL · MySQL
+              </AnimatedSpan>
+              <TypingAnimation className="mt-2 text-emerald-400">
+                {"jailan@portfolio ~ % pwd"}
+              </TypingAnimation>
+              <AnimatedSpan className="text-zinc-300">
+                {DATA.location}
+              </AnimatedSpan>
+              <TypingAnimation className="mt-2 text-emerald-400">
+                {"jailan@portfolio ~ % echo $MISSION"}
+              </TypingAnimation>
+              <AnimatedSpan className="text-amber-200">
+                Building thoughtful products that feel fast, useful, and dependable.
+              </AnimatedSpan>
+            </Terminal>
+          </BlurFade>
         </div>
       </section>
       <section id="about">

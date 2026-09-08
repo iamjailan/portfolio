@@ -17,7 +17,7 @@ export const DATA = {
   location: "Kabul, Afghanistan",
   locationLink: "https://maps.google.com/?q=Kabul,Afghanistan",
   description:
-    "Full-Stack Developer building reliable, scalable web applications and APIs with React, Next.js, Node.js, NestJS, and TypeScript.",
+    "Full-Stack Developer building reliable, scalable web applications and APIs with Go, Python, Node.js, TypeScript, PostgreSQL, and MySQL.",
   summary:
     "Full-Stack Developer with over 5 years of experience building production web and mobile applications, designing APIs, and delivering responsive frontend experiences. I specialize in React, Next.js, Node.js, NestJS, and modern backend systems.\n\nMy core stack includes React, Next.js, Node.js, NestJS, TypeScript, PostgreSQL, and Prisma. I also work with React Query, Redux, Docker, and cloud deployment workflows.",
   avatarUrl: "/go-gopher.png",
@@ -38,6 +38,7 @@ export const DATA = {
         { name: "Next.js", icon: NextjsIconDark },
         { name: "Node.js", icon: Nodejs },
         { name: "NestJS", icon: undefined },
+        { name: "FastAPI", icon: undefined },
         { name: "Express", icon: undefined },
         { name: "REST APIs", icon: undefined },
         { name: "GraphQL", icon: undefined },
@@ -50,6 +51,7 @@ export const DATA = {
         { name: "MongoDB", icon: undefined },
         { name: "MySQL", icon: undefined },
         { name: "Prisma", icon: undefined },
+        { name: "GORM", icon: undefined },
       ],
     },
     {
@@ -110,16 +112,16 @@ export const DATA = {
   },
   work: [
     {
-      company: "OtaTickets.com",
-      href: "https://otatickets.com",
+      company: "New Link Group of Companies",
+      href: "https://otatraveltours.com/en",
       badges: [],
       location: "Kabul, Afghanistan",
       title: "Full-Stack Developer",
-      logoUrl: "https://www.google.com/s2/favicons?domain=otatickets.com&sz=128",
+      logoUrl: "https://www.google.com/s2/favicons?domain=otatraveltours.com&sz=128",
       start: "Aug 2026",
       end: "Present",
       description:
-        "Building a ticket reservation and booking platform: responsive flight search and booking workflows in React and Next.js, plus scalable NestJS and Express APIs using MySQL, gRPC, and RabbitMQ. Integrating real-time airline and travel-provider availability, pricing, and booking data.",
+        "Building a ticket reservation and booking platform: responsive flight search and booking workflows in React and Next.js, plus scalable NestJS and Express APIs using MySQL, gRPC, and RabbitMQ. Integrating real-time airline and travel-provider availability, pricing, and booking data, while building APIs used by partner platforms including HesabPay, e& Afghanistan, and Azizi Bank in their mobile applications.",
     },
     {
       company: "Sunzala Marketplace",

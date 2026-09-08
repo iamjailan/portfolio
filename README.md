@@ -1,38 +1,63 @@
-# Hi, I’m Jailan Samun 👋
+# Hi, I'm Jailan Samun 👋
 
-I’m a Full-Stack Developer based in Kabul, Afghanistan. I build reliable, scalable web applications and APIs with a focus on polished user experiences and maintainable backend systems.
+Full Stack Software Developer with 5+ years of experience building web and mobile applications, scalable APIs, and production-ready software.
 
-With more than five years of experience, I work across the full product lifecycle—from interface design and responsive frontend development to API architecture, databases, deployment, and ongoing improvement.
+## 🚀 About Me
 
-## What I do
+- 💻 Full Stack Developer focused on modern frontend and backend technologies
+- 🎨 Experienced in building responsive, user-friendly, and high-performance UI/UX
+- ⚡ Skilled in API development, database design, and scalable application architecture
+- ☁️ Comfortable deploying full-stack applications with Docker and cloud platforms
+- 🤖 Interested in AI-powered products and practical software automation
+- 🌍 Based in Kabul, Afghanistan and working with local & remote teams
 
-- Build web and mobile applications with React, Next.js, Node.js, NestJS, and TypeScript
-- Design secure, scalable REST and GraphQL APIs
-- Model and manage data with PostgreSQL, MySQL, MongoDB, and Prisma
-- Deploy and operate applications with Docker, Azure, Google Cloud, CI/CD, and GitHub Actions
-- Turn product ideas into complete, production-ready experiences
+## 🛠 Tech Stack
 
-## Experience
+### Frontend
 
-I’ve contributed to products and teams including OtaTickets.com, Sunzala Marketplace, ProfitWave360, blissio.ai, AseelApp, MCCO Afghanistan, and Dursa. My work has included booking systems, marketplaces, financial-service websites, AI-enabled services, e-commerce platforms, and public-facing web applications.
+- React
+- Next.js
+- TypeScript
+- JavaScript
+- Tailwind CSS
+- Redux
+- Responsive UI Design
 
-## Selected projects
+### Backend
 
-- [ResumeAF](https://resume.sleepany.com/) — A CV and resume builder with templates and export support.
-- [Sunzala Afghan Store](https://www.sunzala.app/) — A marketplace for Afghan crafts, spices, clothing, and gemstones.
-- [Marghai Job Portal](https://marghai.vercel.app/) — A job platform with authentication, search, filtering, and applications.
-- [Wadan Real Estate](https://wadan-estate.onrender.com/) — A MERN real-estate application with user authentication.
-- [Chatak Weather](https://weather-af.netlify.app/) — A multilingual weather application built with React and the OpenWeather API.
-- [Singar Store](https://singar.netlify.app/) — A React and Firebase e-commerce application.
+- Node.js
+- Express.js
+- Python
+- Go
+- REST APIs
+- Authentication & Authorization
+- WebSockets
 
-## Core stack
+### Database & Deployment
 
-JavaScript · TypeScript · Python · Go · React · Next.js · Node.js · NestJS · Express · PostgreSQL · MongoDB · MySQL · Prisma · Redis · RabbitMQ · Docker · Azure · Google Cloud · Tailwind CSS
+- MongoDB
+- PostgreSQL
+- Firebase
+- Docker
+- Git & GitHub
+- Azure
+- Google Cloud
 
-## Find me online
+## 📌 What I Build
 
-- Portfolio: [sleepany.com](https://sleepany.com)
-- GitHub: [github.com/iamjailan](https://github.com/iamjailan)
-- LinkedIn: [linkedin.com/in/iamjailan](https://linkedin.com/in/iamjailan)
+- Web Applications
+- Mobile Applications
+- REST APIs
+- AI-powered Applications
+- Admin Dashboards
+- Scalable Backend Systems
+- Modern Frontend Interfaces
+
+## 🌐 Portfolio
+
+- Portfolio: http://iamjailan.vercel.app/
+- LinkedIn: https://www.linkedin.com/in/iamjailan/
+
+## 📫 Contact
+
 - Email: [jailan.samun@gmail.com](mailto:jailan.samun@gmail.com)
-- [Download my CV](public/Jailan_Samun_CV.pdf)
