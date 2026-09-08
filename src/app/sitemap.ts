@@ -14,6 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: new URL("/retro", DATA.url).toString(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 
   const blogPosts: MetadataRoute.Sitemap = allPosts.map((post) => {

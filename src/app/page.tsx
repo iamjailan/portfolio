@@ -13,7 +13,7 @@ import {
   Terminal,
   TypingAnimation,
 } from "@/components/ui/terminal";
-import { ArrowUpRight, Download } from "lucide-react";
+import { ArrowUpRight, Download, History } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -36,12 +36,20 @@ export default function Page() {
                 text={DATA.description}
               />
               <BlurFade delay={BLUR_FADE_DELAY * 2} className="mt-3">
-                <Button asChild variant="outline" className="w-fit gap-2">
-                  <a href={DATA.resumeUrl} download="Jailan_Samun_CV.pdf">
-                    <Download className="size-4" aria-hidden />
-                    Download CV
-                  </a>
-                </Button>
+                <div className="flex flex-wrap gap-2">
+                  <Button asChild variant="outline" className="w-fit gap-2">
+                    <a href={DATA.resumeUrl} download="Jailan_Samun_CV.pdf">
+                      <Download className="size-4" aria-hidden />
+                      Download CV
+                    </a>
+                  </Button>
+                  <Button asChild variant="secondary" className="w-fit gap-2">
+                    <Link href="/retro">
+                      <History className="size-4" aria-hidden />
+                      Let&apos;s travel 30 years back
+                    </Link>
+                  </Button>
+                </div>
               </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">

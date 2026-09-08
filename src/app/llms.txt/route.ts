@@ -24,6 +24,7 @@ export function GET() {
     "",
     `- [Portfolio](${absoluteUrl("/")}): Work experience, education, skills, projects, and contact information.`,
     `- [Blog](${absoluteUrl("/blog")}): Articles about web development and software engineering.`,
+    `- [1990s Portfolio](${absoluteUrl("/retro")}): A static, accessible 1990s-style edition of the same portfolio.`,
     `- [Résumé PDF](${absoluteUrl(DATA.resumeUrl)}): Downloadable professional résumé.`,
     "",
     "## Selected projects",

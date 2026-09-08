@@ -1,6 +1,5 @@
-import Navbar from "@/components/navbar";
+import { SiteShell } from "@/components/site-shell";
 import { ThemeProvider } from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -10,7 +9,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "@sohumsuthar/liquid-glass/css/liquid-glass-core.css";
 import "@sohumsuthar/liquid-glass/css/liquid-glass-nav.css";
 import "./globals.css";
-import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -27,10 +25,27 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
-    default: DATA.name,
+    default: `${DATA.name} — Full-Stack Developer`,
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
+  keywords: [
+    "Jailan Samun",
+    "Full-Stack Developer",
+    "Software Engineer",
+    "Go Developer",
+    "Python Developer",
+    "Node.js Developer",
+    "Next.js Developer",
+    "API Developer",
+    "PostgreSQL",
+    "MySQL",
+    "Kabul Afghanistan",
+  ],
+  authors: [{ name: DATA.name, url: DATA.url }],
+  creator: DATA.name,
+  publisher: DATA.name,
+  category: "technology",
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -56,7 +71,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${DATA.name}`,
+    title: `${DATA.name} — Full-Stack Developer`,
     description: DATA.description,
     url: DATA.url,
     siteName: `${DATA.name}`,
@@ -75,7 +90,8 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}`,
+    title: `${DATA.name} — Full-Stack Developer`,
+    description: DATA.description,
     card: "summary_large_image",
   },
   verification: {
@@ -105,23 +121,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TooltipProvider delayDuration={0}>
-            <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
-              <FlickeringGrid
-                className="h-full w-full"
-                squareSize={2}
-                gridGap={2}
-                style={{
-                  maskImage: "linear-gradient(to bottom, black, transparent)",
-                  WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
-                }}
-              />
-            </div>
-            <div className="relative z-10 max-w-2xl mx-auto py-12 pb-24 sm:py-24 px-6">
-              {children}
-            </div>
-            <Navbar />
-          </TooltipProvider>
+          <SiteShell>{children}</SiteShell>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
