@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { DATA } from "@/data/resume";
+import { TimeTravelLink } from "@/components/time-travel-link";
 import type { Metadata } from "next";
-import Link from "next/link";
 import styles from "./retro.module.css";
 
 const pageUrl = new URL("/retro", DATA.url).toString();
@@ -88,7 +88,9 @@ export default function RetroPortfolioPage() {
           <a href="#skills">[ SKILLS ]</a>
           <a href="#projects">[ COOL LINKS ]</a>
           <a href="#contact">[ E-MAIL ME ]</a>
-          <Link href="/">[ RETURN TO 2026 ]</Link>
+          <TimeTravelLink href="/" direction="future">
+            [ RETURN TO 2026 ]
+          </TimeTravelLink>
         </nav>
 
         <main id="main-content" className={styles.content}>
@@ -236,7 +238,9 @@ export default function RetroPortfolioPage() {
             Last updated: September 8, 2026 · © {DATA.name}
           </p>
           <p>
-            <Link href="/">Click here to return to the modern portfolio</Link>
+            <TimeTravelLink href="/" direction="future">
+              Click here to return to the modern portfolio
+            </TimeTravelLink>
           </p>
         </footer>
       </div>

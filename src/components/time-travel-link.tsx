@@ -19,30 +19,38 @@ const COUNTDOWN_DURATION = 2600;
 
 interface TimeTravelLinkProps
   extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
-  href: "/retro";
+  href: "/retro" | "/";
+  direction?: "past" | "future";
   children: ReactNode;
 }
 
 export const TimeTravelLink = forwardRef<HTMLAnchorElement, TimeTravelLinkProps>(
-  function TimeTravelLink({ href, children, onClick, ...props }, ref) {
+  function TimeTravelLink(
+    { href, direction, children, onClick, ...props },
+    ref
+  ) {
   const router = useRouter();
   const [isTravelling, setIsTravelling] = useState(false);
   const [displayYear, setDisplayYear] = useState(DESTINATION_YEAR);
+  const travelDirection = direction ?? (href === "/retro" ? "past" : "future");
+  const isReturning = travelDirection === "future";
 
   useEffect(() => {
     if (!isTravelling) return;
 
-    const departureYear = new Date().getFullYear();
-    const yearsToTravel = Math.max(departureYear - DESTINATION_YEAR, 1);
+    const currentYear = new Date().getFullYear();
+    const departureYear = isReturning ? DESTINATION_YEAR : currentYear;
+    const arrivalYear = isReturning ? currentYear : DESTINATION_YEAR;
+    const yearsToTravel = Math.max(Math.abs(arrivalYear - departureYear), 1);
     const startedAt = performance.now();
 
     const countdown = window.setInterval(() => {
       const elapsed = performance.now() - startedAt;
       const progress = Math.min(elapsed / COUNTDOWN_DURATION, 1);
-      const year = Math.max(
-        DESTINATION_YEAR,
-        departureYear - Math.floor(progress * yearsToTravel)
-      );
+      const yearsElapsed = Math.floor(progress * yearsToTravel);
+      const year = isReturning
+        ? Math.min(arrivalYear, departureYear + yearsElapsed)
+        : Math.max(arrivalYear, departureYear - yearsElapsed);
 
       setDisplayYear(year);
 
@@ -54,7 +62,7 @@ export const TimeTravelLink = forwardRef<HTMLAnchorElement, TimeTravelLinkProps>
       window.clearTimeout(timeout);
       window.clearInterval(countdown);
     };
-  }, [href, isTravelling, router]);
+  }, [href, isReturning, isTravelling, router]);
 
   const handleClick: AnchorHTMLAttributes<HTMLAnchorElement>["onClick"] = (
     event
@@ -79,7 +87,9 @@ export const TimeTravelLink = forwardRef<HTMLAnchorElement, TimeTravelLinkProps>
       return;
     }
 
-    setDisplayYear(new Date().getFullYear());
+    setDisplayYear(
+      travelDirection === "past" ? new Date().getFullYear() : DESTINATION_YEAR
+    );
     setIsTravelling(true);
   };
 
@@ -96,7 +106,11 @@ export const TimeTravelLink = forwardRef<HTMLAnchorElement, TimeTravelLinkProps>
         </Link>
         {isTravelling &&
           createPortal(
-            <div className={styles.overlay} role="status" aria-live="assertive">
+            <div
+              className={`${styles.overlay} ${isReturning ? styles.returning : ""}`}
+              role="status"
+              aria-live="assertive"
+            >
               <div className={styles.stars} aria-hidden="true" />
               <div className={styles.portal} aria-hidden="true" />
               <img
@@ -106,10 +120,14 @@ export const TimeTravelLink = forwardRef<HTMLAnchorElement, TimeTravelLinkProps>
                 aria-hidden="true"
               />
               <div className={styles.destination}>
-                <p className={styles.kicker}>TIME TRAVEL INITIATED</p>
+                <p className={styles.kicker}>
+                  {isReturning ? "RETURN TRIP INITIATED" : "TIME TRAVEL INITIATED"}
+                </p>
                 <p className={styles.year}>{displayYear}</p>
                 <p className={styles.message}>
-                  Gopher is taking us back to the early web…
+                  {isReturning
+                    ? "Gopher is bringing us back to the modern web…"
+                    : "Gopher is taking us back to the early web…"}
                 </p>
               </div>
             </div>,

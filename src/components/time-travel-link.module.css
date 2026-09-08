@@ -56,6 +56,18 @@
   animation: gopher-journey 3600ms cubic-bezier(0.16, 0.84, 0.35, 1) both;
 }
 
+.returning .stars {
+  animation-name: star-warp-return;
+}
+
+.returning .portal {
+  animation-name: time-tunnel-return;
+}
+
+.returning .traveller {
+  animation-name: gopher-return;
+}
+
 .destination {
   z-index: 1;
   width: min(92vw, 460px);
@@ -140,6 +152,41 @@
   100% {
     opacity: 0;
     transform: translate(0, 0) rotate(42deg) scale(0.08);
+  }
+}
+
+@keyframes star-warp-return {
+  0% { transform: scale(8); opacity: 0; }
+  25% { transform: scale(3.8); opacity: 1; }
+  100% { transform: scale(0.4); opacity: 0.15; }
+}
+
+@keyframes time-tunnel-return {
+  0% { transform: scale(7) rotate(42deg); opacity: 0; }
+  24% { transform: scale(2.1) rotate(20deg); opacity: 1; }
+  100% { transform: scale(0.08) rotate(0deg); opacity: 0.3; }
+}
+
+@keyframes gopher-return {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(42deg) scale(0.08);
+  }
+  22% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(24deg) scale(1.18);
+  }
+  46% {
+    opacity: 1;
+    transform: translate(5vw, -8vh) rotate(12deg) scale(1);
+  }
+  84% {
+    opacity: 1;
+    transform: translate(-24vw, 13vh) rotate(-9deg) scale(0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-52vw, 34vh) rotate(-24deg) scale(0.35);
   }
 }
 
