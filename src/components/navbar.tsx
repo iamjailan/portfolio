@@ -2,6 +2,7 @@
 
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "@/components/mode-toggle";
+import { TimeTravelLink } from "@/components/time-travel-link";
 import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
@@ -59,29 +60,45 @@ export default function Navbar() {
           >
         {DATA.navbar.map((item) => {
           const isExternal = item.href.startsWith("http");
+          const isTimeTravel = item.href === "/retro";
           const isActive =
             item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+
+          const icon = (
+            <DockIcon
+              className={cn(
+                "ios-glass-icon lg-nav-btn size-full cursor-pointer rounded-[17px] p-0 text-white",
+                isActive && "is-active"
+              )}
+            >
+              <item.icon className="size-full overflow-hidden rounded-sm object-contain" />
+            </DockIcon>
+          );
 
           return (
             <Tooltip key={item.href}>
               <TooltipTrigger asChild>
-                <a
-                  href={item.href}
-                  aria-label={item.label}
-                  aria-current={isActive ? "page" : undefined}
-                  target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noopener noreferrer" : undefined}
-                  className="rounded-[17px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-                >
-                  <DockIcon
-                    className={cn(
-                      "ios-glass-icon lg-nav-btn size-full cursor-pointer rounded-[17px] p-0 text-white",
-                      isActive && "is-active"
-                    )}
+                {isTimeTravel ? (
+                  <TimeTravelLink
+                    href="/retro"
+                    aria-label={item.label}
+                    aria-current={isActive ? "page" : undefined}
+                    className="rounded-[17px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
                   >
-                    <item.icon className="size-full overflow-hidden rounded-sm object-contain" />
-                  </DockIcon>
-                </a>
+                    {icon}
+                  </TimeTravelLink>
+                ) : (
+                  <a
+                    href={item.href}
+                    aria-label={item.label}
+                    aria-current={isActive ? "page" : undefined}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="rounded-[17px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                  >
+                    {icon}
+                  </a>
+                )}
               </TooltipTrigger>
               <TooltipContent
                 side="top"

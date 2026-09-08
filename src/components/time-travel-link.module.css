@@ -1,0 +1,150 @@
+.overlay {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  color: #ffffff;
+  background: #01020a;
+  isolation: isolate;
+  animation: overlay-in 220ms ease-out both, portal-flash 3600ms ease-in both;
+}
+
+.stars,
+.portal {
+  position: absolute;
+  inset: -30vmax;
+  pointer-events: none;
+}
+
+.stars {
+  z-index: -2;
+  opacity: 0.8;
+  background-image:
+    radial-gradient(circle, #ffffff 0 1px, transparent 1.7px),
+    radial-gradient(circle, #7dd3fc 0 1px, transparent 1.9px),
+    radial-gradient(circle, #e879f9 0 1px, transparent 1.8px);
+  background-position: 0 0, 27px 61px, 83px 19px;
+  background-size: 119px 131px, 173px 149px, 227px 211px;
+  filter: drop-shadow(0 0 3px #93c5fd);
+  animation: star-warp 3600ms cubic-bezier(0.16, 0.84, 0.35, 1) both;
+}
+
+.portal {
+  z-index: -1;
+  background:
+    repeating-radial-gradient(
+      ellipse at center,
+      rgb(103 232 249 / 5%) 0 2px,
+      rgb(59 130 246 / 18%) 5px 8px,
+      transparent 14px 26px
+    ),
+    radial-gradient(circle at center, #ecfeff 0 1%, #22d3ee 3%, #2563eb 11%, #4c1d95 28%, transparent 59%);
+  filter: blur(0.5px) saturate(150%);
+  transform: scale(0.08);
+  animation: time-tunnel 3600ms cubic-bezier(0.16, 0.84, 0.35, 1) both;
+}
+
+.traveller {
+  position: absolute;
+  z-index: 2;
+  width: clamp(78px, 13vw, 140px);
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 0 16px rgb(103 232 249 / 90%));
+  animation: gopher-journey 3600ms cubic-bezier(0.16, 0.84, 0.35, 1) both;
+}
+
+.destination {
+  z-index: 1;
+  width: min(92vw, 460px);
+  padding: 28px;
+  text-align: center;
+  text-shadow: 0 2px 16px #020617;
+  opacity: 0;
+  transform: scale(0.72);
+  animation: destination-in 3600ms cubic-bezier(0.16, 0.84, 0.35, 1) both;
+}
+
+.kicker {
+  margin: 0;
+  color: #a5f3fc;
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(11px, 2vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.year {
+  margin: 8px 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: clamp(84px, 20vw, 170px);
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: -0.08em;
+  color: #ffffff;
+}
+
+.message {
+  margin: 18px 0 0;
+  color: #e0f2fe;
+  font-size: clamp(15px, 2.5vw, 18px);
+}
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes star-warp {
+  0% { transform: scale(0.4); opacity: 0.15; }
+  75% { transform: scale(3.8); opacity: 1; }
+  100% { transform: scale(8); opacity: 0; }
+}
+
+@keyframes time-tunnel {
+  0% { transform: scale(0.08) rotate(0deg); opacity: 0.3; }
+  76% { transform: scale(2.1) rotate(20deg); opacity: 1; }
+  100% { transform: scale(7) rotate(42deg); opacity: 0; }
+}
+
+@keyframes destination-in {
+  0%, 10% { opacity: 0; transform: scale(0.72) translateY(20px); }
+  22%, 76% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(1.5) translateY(-12px); }
+}
+
+@keyframes portal-flash {
+  0%, 86% { background-color: #01020a; }
+  100% { background-color: #ffffff; }
+}
+
+@keyframes gopher-journey {
+  0% {
+    opacity: 0;
+    transform: translate(-52vw, 34vh) rotate(-24deg) scale(0.35);
+  }
+  16% {
+    opacity: 1;
+    transform: translate(-24vw, 13vh) rotate(-9deg) scale(0.7);
+  }
+  54% {
+    opacity: 1;
+    transform: translate(5vw, -8vh) rotate(12deg) scale(1);
+  }
+  78% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(24deg) scale(1.18);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(42deg) scale(0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    animation: none;
+  }
+}

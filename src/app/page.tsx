@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import { TimeTravelLink } from "@/components/time-travel-link";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -44,10 +45,10 @@ export default function Page() {
                     </a>
                   </Button>
                   <Button asChild variant="secondary" className="w-fit gap-2">
-                    <Link href="/retro">
+                    <TimeTravelLink href="/retro">
                       <History className="size-4" aria-hidden />
                       Let&apos;s travel 30 years back
-                    </Link>
+                    </TimeTravelLink>
                   </Button>
                 </div>
               </BlurFade>
