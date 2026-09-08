@@ -2,7 +2,14 @@
 
 import { cn } from "@/lib/utils";
 import { motion, type MotionValue, useMotionValue, useSpring, useTransform } from "motion/react";
-import { createContext, useContext, useRef, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useRef,
+  type KeyboardEvent,
+  type MouseEventHandler,
+  type ReactNode,
+} from "react";
 
 interface DockProps {
   className?: string;
@@ -14,6 +21,8 @@ interface DockProps {
 interface DockIconProps {
   className?: string;
   children?: ReactNode;
+  onClick?: MouseEventHandler<HTMLDivElement>;
+  ariaLabel?: string;
 }
 
 const DEFAULT_MAGNIFICATION = 60;
@@ -47,7 +56,7 @@ const Dock = ({ className, children, magnification = DEFAULT_MAGNIFICATION, dist
   );
 };
 
-const DockIcon = ({ className, children }: DockIconProps) => {
+const DockIcon = ({ className, children, onClick, ariaLabel }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const context = useContext(DockContext);
 
@@ -71,10 +80,22 @@ const DockIcon = ({ className, children }: DockIconProps) => {
     SPRING
   );
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (!onClick || (event.key !== "Enter" && event.key !== " ")) return;
+
+    event.preventDefault();
+    event.currentTarget.click();
+  };
+
   return (
     <motion.div
       ref={ref}
       style={{ width: containerSize, height: containerSize }}
+      onClick={onClick}
+      onKeyDown={handleKeyDown}
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      aria-label={ariaLabel}
       className={cn("relative flex aspect-square items-center justify-center rounded-full shrink-0", className)}
     >
       <motion.div
