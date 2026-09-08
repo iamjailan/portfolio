@@ -2,6 +2,7 @@
 import { DATA } from "@/data/resume";
 import { TimeTravelLink } from "@/components/time-travel-link";
 import type { Metadata } from "next";
+import Markdown from "react-markdown";
 import styles from "./retro.module.css";
 
 const pageUrl = new URL("/retro", DATA.url).toString();
@@ -160,7 +161,16 @@ export default function RetroPortfolioPage() {
                         <br />
                         <small>{job.location}</small>
                       </td>
-                      <td>{job.description}</td>
+                      <td>
+                        <Markdown
+                          components={{
+                            p: ({ children }) => <>{children}</>,
+                            strong: ({ children }) => <b>{children}</b>,
+                          }}
+                        >
+                          {job.description}
+                        </Markdown>
+                      </td>
                     </tr>
                   ))}
                 </tbody>

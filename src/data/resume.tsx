@@ -147,7 +147,7 @@ export const DATA = {
       start: "Aug 2026",
       end: "Present",
       description:
-        "Building a ticket reservation and booking platform: responsive flight search and booking workflows in React and Next.js, plus scalable NestJS and Express APIs using MySQL, gRPC, and RabbitMQ. Integrating real-time airline and travel-provider availability, pricing, and booking data, while building APIs used by partner platforms including HesabPay, e& Afghanistan, and Azizi Bank in their mobile applications.",
+        "Building a **ticket reservation and booking platform**: responsive flight search and booking workflows in **React** and **Next.js**, plus scalable **NestJS** and **Express** APIs using **MySQL**, **gRPC**, and **RabbitMQ**. Integrating real-time airline and travel-provider availability, pricing, and booking data, while building APIs used by partner platforms including **HesabPay**, **e& Afghanistan**, and **Azizi Bank** in their mobile applications.",
     },
     {
       company: "Sunzala Marketplace",
@@ -159,7 +159,7 @@ export const DATA = {
       start: "Jun 2026",
       end: "Present",
       description:
-        "Founded and independently developing a marketplace for digital and physical products with Next.js, React, TypeScript, NestJS, and PostgreSQL. Owning the product from architecture and secure APIs through database design, deployment, infrastructure, and ongoing development.",
+        "Founded and independently developing a **marketplace for digital and physical products** with **Next.js**, **React**, **TypeScript**, **NestJS**, and **PostgreSQL**. Owning the product from **architecture** and **secure APIs** through **database design**, **deployment**, **infrastructure**, and ongoing development.",
     },
     {
       company: "Profitwave360 LLC",
@@ -171,7 +171,7 @@ export const DATA = {
       start: "May 2026",
       end: "Jul 2026",
       description:
-        "Developed and maintained the Profitwave360 website, improving features, user experience, page performance, technical SEO, calculators, and content-focused service pages.",
+        "Developed and maintained the **Profitwave360 website**, improving features, user experience, **page performance**, **technical SEO**, **calculators**, and content-focused service pages.",
     },
     {
       company: "blissio.ai",
@@ -183,7 +183,7 @@ export const DATA = {
       start: "Sep 2024",
       end: "Jun 2026",
       description:
-        "Led backend development for production APIs and services using NestJS, TypeScript, PostgreSQL, and Prisma. Managed Docker deployments across Azure, Google Cloud, and DigitalOcean; integrated AI-powered services; and contributed to the React Native application.",
+        "Led **backend development** for production APIs and services using **NestJS**, **TypeScript**, **PostgreSQL**, and **Prisma**. Managed **Docker** deployments across **Azure**, **Google Cloud**, and **DigitalOcean**; integrated **AI-powered services**; and contributed to the **React Native** application.",
     },
     {
       company: "AseelApp",
@@ -195,7 +195,7 @@ export const DATA = {
       start: "Dec 2023",
       end: "Aug 2024",
       description:
-        "Contributed across backend, web frontend, and mobile applications. Built Node.js, Express, MedusaJS, and PostgreSQL services; enhanced React and Next.js web applications; and delivered React Native features and performance improvements.",
+        "Contributed across **backend**, **web frontend**, and **mobile** applications. Built **Node.js**, **Express**, **MedusaJS**, and **PostgreSQL** services; enhanced **React** and **Next.js** web applications; and delivered **React Native** features and performance improvements.",
     },
     {
       company: "MCCO Afghanistan",
@@ -207,7 +207,7 @@ export const DATA = {
       start: "Feb 2023",
       end: "Dec 2023",
       description:
-        "Built and launched MCCO's official website as the sole Full-Stack Developer. Designed the Next.js, TypeScript, Tailwind CSS, and MongoDB architecture, built REST APIs, and managed deployment and post-launch maintenance.",
+        "Built and launched **MCCO's official website** as the **sole Full-Stack Developer**. Designed the **Next.js**, **TypeScript**, **Tailwind CSS**, and **MongoDB** architecture, built **REST APIs**, and managed **deployment** and post-launch maintenance.",
     },
     {
       company: "Dursa",
@@ -219,7 +219,7 @@ export const DATA = {
       start: "Jul 2022",
       end: "Jan 2023",
       description:
-        "Developed and maintained the Dursa website using Next.js, React, and Tailwind CSS. Built responsive, accessible interfaces, delivered new features, and improved page-load performance.",
+        "Developed and maintained the **Dursa website** using **Next.js**, **React**, and **Tailwind CSS**. Built **responsive**, **accessible** interfaces, delivered new features, and improved **page-load performance**.",
     },
   ],
   education: [

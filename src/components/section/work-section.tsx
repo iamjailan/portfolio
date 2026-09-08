@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { DATA } from "@/data/resume";
 import { ChevronRight } from "lucide-react";
+import Markdown from "react-markdown";
 
 function LogoImage({ src, alt }: { src: string; alt: string }) {
   const [imageError, setImageError] = useState(false);
@@ -76,7 +77,20 @@ export default function WorkSection() {
             </AccordionTrigger>
           </div>
           <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground">
-            {work.description}
+            <Markdown
+              components={{
+                p: ({ children }) => (
+                  <p className="m-0 leading-relaxed">{children}</p>
+                ),
+                strong: ({ children }) => (
+                  <strong className="font-semibold text-foreground">
+                    {children}
+                  </strong>
+                ),
+              }}
+            >
+              {work.description}
+            </Markdown>
           </AccordionContent>
         </AccordionItem>
       ))}
