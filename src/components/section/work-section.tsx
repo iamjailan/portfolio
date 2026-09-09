@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { DATA } from "@/data/resume";
-import { ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 import Markdown from "react-markdown";
 
 function LogoImage({ src, alt }: { src: string; alt: string }) {
@@ -77,20 +77,38 @@ export default function WorkSection() {
             </AccordionTrigger>
           </div>
           <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground">
-            <Markdown
-              components={{
-                p: ({ children }) => (
-                  <p className="m-0 leading-relaxed">{children}</p>
-                ),
-                strong: ({ children }) => (
-                  <strong className="font-semibold text-foreground">
-                    {children}
-                  </strong>
-                ),
-              }}
-            >
-              {work.description}
-            </Markdown>
+            <div className="grid gap-3">
+              <Markdown
+                components={{
+                  p: ({ children }) => (
+                    <p className="m-0 leading-relaxed">{children}</p>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="font-semibold text-foreground">
+                      {children}
+                    </strong>
+                  ),
+                }}
+              >
+                {work.description}
+              </Markdown>
+              {"appLinks" in work && (
+                <div className="flex flex-wrap gap-2">
+                  {work.appLinks.map((appLink) => (
+                    <a
+                      key={appLink.href}
+                      href={appLink.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
+                      {appLink.label}
+                      <ArrowUpRight className="size-3.5" aria-hidden />
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           </AccordionContent>
         </AccordionItem>
       ))}

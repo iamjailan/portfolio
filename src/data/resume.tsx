@@ -184,6 +184,16 @@ export const DATA = {
       end: "Jun 2026",
       description:
         "Led **backend development** for production APIs and services using **NestJS**, **TypeScript**, **PostgreSQL**, and **Prisma**. Managed **Docker** deployments across **Azure**, **Google Cloud**, and **DigitalOcean**; integrated **AI-powered services**; and contributed to the **React Native** application.",
+      appLinks: [
+        {
+          label: "Go to app on Google Play",
+          href: "https://play.google.com/store/apps/details?id=com.blissio.ai",
+        },
+        {
+          label: "Go to app on the App Store",
+          href: "https://apps.apple.com/us/app/blissio-ai-focus-app-blocker/id6741106932",
+        },
+      ],
     },
     {
       company: "AseelApp",
