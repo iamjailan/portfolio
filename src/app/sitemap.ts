@@ -21,16 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const blogPosts: MetadataRoute.Sitemap = allPosts.map((post) => {
-    const slug = post._meta.path.replace(/\.mdx$/, "");
 
-    return {
-      url: new URL(`/blog/${slug}`, DATA.url).toString(),
-      lastModified: new Date(post.updatedAt ?? post.publishedAt),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    };
-  });
-
-  return [...staticPages, ...blogPosts];
+  return [...staticPages];
 }
